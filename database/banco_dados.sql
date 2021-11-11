@@ -11,4 +11,6 @@ nome varchar(250) not null,
 sobrenome varchar(500) not null,
 email varchar(500) not null,
 celular varchar(20) not null
+usuario varchar(255) not null,
+    senha varchar (255) not null
 );
