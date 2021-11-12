@@ -1,46 +1,40 @@
 <?php
-
-include('../componentes/header.php');
-
 session_start();
+if (isset($_SESSION['idSessao'])) {
 
-require('../database/conexao.php');
-
-$sql = "SELECT * FROM tbl_pessoa";
-
-$resultado = mysqli_query($conexao, $sql);
-
+    include('../componentes/header.php');
 ?>
 
-
-<div class="container">
-    <hr>
-    <div class="card">
-        <div class="card-header">
-            <h2>Cadastro</h2>
-        </div>
-        <div class="card-body">
-            <form method="post" action="./funcoes.php">
-                <input type="hidden" name="acao" value="inserir" />
-                <input class="form-control" type="text" placeholder="Digite o nome" name="nome" id="nome" require>
-                <br />
-                <input class="form-control" type="text" placeholder="Digite o sobrenome" name="sobrenome" id="sobrenome" require>
-                <br />
-                <input class="form-control" type="text" placeholder="Digite o email" name="email" id="email" require>
-                <br />
-                <input class="form-control" type="text" placeholder="Digite celular" name="celular" id="celular" require>
-                <br />
-                <input class="form-control" type="text" placeholder="Digite um usuario" name="usuario" id="usuario" require>
-                <br />
-                <input class="form-control" type="text" placeholder="Digite uma senha" name="senha" id="senha" require>
-                <br />
-                <button class="btn btn-success">CADASTRAR</button>
-            </form>
+    <div class="container">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" action="./acoes.php">
+                    <input name="acao" type="hidden" value="inserir">
+                    <input class="form-control" type="text" placeholder="Digite o nome" name="nome" id="nome">
+                    <br />
+                    <input class="form-control" type="text" placeholder="Digite o sobrenome" name="sobrenome" id="sobrenome">
+                    <br />
+                    <input class="form-control" type="text" placeholder="Digite o email" name="email" id="email">
+                    <br />
+                    <input class="form-control" type="text" placeholder="Digite celular" name="celular" id="celular">
+                    <br />
+                    <button class="btn btn-success">CADASTRAR</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
 <?php
+
+} else {
+    header('location: ../login/index.php');
+    echo ('USUÁRIO NÃO AUTENTICADO');
+}
+
 include('../componentes/footer.php');
 ?>

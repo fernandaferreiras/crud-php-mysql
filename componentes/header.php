@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -9,37 +10,44 @@
     <title>SISTEMA DE CADASTRO</title>
 
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../bootstrap/css/style.css">    
+    <link rel="stylesheet" href="../bootstrap/css/style.css">
 
 </head>
 
 <body>
-    
-<nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="">
-        Cadastro
-    </a>
 
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="../cadastro">Cadastrar</a>
-        </li>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="">
+            Cadastro
+        </a>
 
-    </ul>
+        <?php
+        if (isset($_SESSION['idSessao'])) :
+        ?>
 
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="../listagem">Listar</a>
-        </li>
-        
-    </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../cadastro">Cadastrar</a>
+                </li>
 
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="../login/">Sair</a>
-        </li>
-        
-    </ul>
-    
+            </ul>
 
-</nav>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../listagem">Listar</a>
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/logout.php">Sair</a>
+                </li>
+            </ul>
+
+        <?php
+        endif
+        ?>
+
+
+    </nav>

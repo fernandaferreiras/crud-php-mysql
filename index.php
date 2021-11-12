@@ -1,8 +1,8 @@
 <?php
+session_start();
 
-    /* REDIRECIONA O FLUXO DE NAVEGAÇÃO PARA O INICIO DA APLICAÇÃO 
-       NA PASTA DE PRODUTOS. O ARQUIVO INDEX DESSA PASTA RESOLVE A
-       PÁGINA INICIAL DA APLICAÇÃO */
-    header('location: login/');
-
-?>
+if (isset($_SESSION['idSessao'])) {
+    header('location: ./listagem/');
+} else {
+    header('location: ./login/');
+}
