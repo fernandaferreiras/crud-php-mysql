@@ -17,7 +17,7 @@ if (isset($_SESSION['idSessao'])) {
                 <h2>Cadastro</h2>
             </div>
             <div class="card-body">
-                <form method="post" action="processa_login.php">
+                <form method="post" action="processaLogin.php">
                     <input type="hidden" name="acao" value="sign up">
                     <input class="form-control" type="text" placeholder="Digite o nome" name="nome" id="nome" required>
                     <br />

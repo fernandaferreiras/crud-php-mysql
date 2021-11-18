@@ -1,4 +1,4 @@
-<form id="form-logout" style="display:none" method="POST" action="../login/processa_login.php">
+<form id="form-logout" style="display:none" method="POST" action="../login/processaLogin.php">
     <input type="hidden" name="acao" value="logout" />
 </form>
 <script>

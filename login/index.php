@@ -12,7 +12,7 @@ if (isset($_SESSION['idSessao'])) {
 
         <div class="container-form">
 
-            <form action="processa_login.php" method="POST">
+            <form action="processaLogin.php" method="POST">
                 <input type="hidden" name="acao" value="login">
 
                 <div class="form-group">
